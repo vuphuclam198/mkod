@@ -1,0 +1,66 @@
+& when (@media-common = true) {
+    .block-title {
+        color: #212121;
+        font-weight: 400;
+        font-family: "Open Sans";
+        text-align: center;
+        text-transform: uppercase;
+        strong {
+            font-weight: 400; 
+            line-height: 48px; 
+            font-size: 36px; 
+        }
+    }
+    .items {
+        display: grid;
+    }
+    .item {
+        position: relative;
+        &__title {
+            position: absolute;
+            top: 38.5%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 48px;
+            line-height: 41px;
+            color: #ffffff;
+            font-family: "Fugue";
+            text-align: center;
+        }
+        &__link {
+            position: absolute;
+            top: 56.5%;
+            left: 49.5%;
+            transform: translate(-50%);
+            font-size: 30px;
+            line-height: 24px;
+            color: #ffffff;
+            font-family: "Fugue";
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    }
+    .widget .block-title > strong {
+        font-weight: 400; 
+        line-height: 48px; 
+        font-size: 36px; 
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-title {
+        font-size: 36px;
+        line-height: 48px;
+        padding: 41px 0px 45px;
+    }
+    .items {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 60px;
+    }
+    
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    
+}

@@ -237,7 +237,10 @@
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     //search
-   
+    .block-search {
+        margin-top: 7px;
+        margin-left: 1.5%;
+    }
     //logo
     .logo {
         margin: unset;
@@ -248,11 +251,12 @@
     //right 
     .header-center-right {
         padding-top: 14px;
+        margin-right: 0.8%;
         &__phone {
             padding-right: 32px;
         }
         &__account {
-            padding-right: 15px;
+            padding-right: 24px;
         }
     }
 }

@@ -1,0 +1,54 @@
+<div class="trending">
+    <?=
+        $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('home-trending')
+        ->toHtml();
+    ?>
+</div>
+<script>
+    require([
+        'jquery',
+        'slick',
+        'domReady!'
+    ], function ($) {
+        $(".widget-product-grid").slick({
+            dots: false,
+            infinite: true,
+            prevArrow: false,
+            nextArrow: false,
+            speed: 300,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            responsive: [
+                            {
+                                breakpoint: 1025,
+                                settings: {
+                                    slidesToShow: 2,
+                                }
+                            }, 
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 2,
+                                }
+                            },
+                            {
+                                breakpoint: 640,
+                                settings: {
+                                    slidesToShow: 2,
+                                }
+                            },
+
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+        });
+        
+    });
+</script>

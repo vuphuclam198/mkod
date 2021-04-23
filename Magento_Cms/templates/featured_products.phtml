@@ -1,0 +1,13 @@
+<div class="featured-products">
+    <div class="block-title">
+        <strong>featured products</strong>
+    </div>
+    <div class="items">
+        <?=
+            $block->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId('featured-products')
+            ->toHtml();
+        ?>
+    </div>
+</div>
