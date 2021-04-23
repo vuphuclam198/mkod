@@ -3,27 +3,31 @@
         .header.panel {
             font-size: @font-size-16px;
             font-family: @font-family__fugue;
+            display: flex;
+            justify-content: space-between;
+            &::before {
+                content: none;
+            }
         }
+
     }
+    
     //top
     .header-top {
+        
+
         &__left {
             color: @color-090909;
-            display: inline-block;
-            float: left;
             letter-spacing: -1px;
             word-spacing: 2px;
         }
         &__center {
             color: @color-242424;
-            display: inline-block;
         }
         &__right {
-            float: right;
             letter-spacing: -0.3px;
             word-spacing: -2px;
             color: @color-232323;
-            display: inline-block;
         }
     }
 
@@ -46,38 +50,34 @@
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .header-top {
-        &__center {
-            margin-left: 12%;
+    .page-header {
+        .header.panel {
+            padding-top: 13px;
+            padding-bottom: unset;
+            line-height: 14px;
+            padding-bottom: 2px;
+            &::before {
+                content: none;
+            }
+            &::after {
+                content: none;
+            }
             
         }
-    }
-}
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
-    .header-top {
-        &__center {
-            margin-left: 25%;
-            
-        }
+
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-    .page-header .header.panel 
-    {
-        padding-top: 15px;
-        padding-bottom: unset;
-        line-height: 14px;
-    }
     .header-top {
         &__left {
-            margin-left: 7.5%;
+            padding-left: 7.5%;
         }
         &__center {
-            margin-left: 21.9%;
+            padding-left: 2.5%;
             
         }
         &__right {
-            margin-right: 6.5%;
+            padding-right: 6.5%;
         }
     }
 }
