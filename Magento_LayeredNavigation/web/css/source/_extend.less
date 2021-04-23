@@ -1,0 +1,43 @@
+.btn_filter, .btn_sorter {
+    background: none;
+    border: none;
+    color: @color-0d0d0d;
+    font-family: @font-family__fugue;
+    .lib-font-size(12);
+    position: relative;
+
+    &:hover, &:active {
+        background: none;
+        border: none;
+        color: unset;
+        box-shadow: none;
+    }
+
+    .icon {
+        right: 0;
+        position: absolute;
+        .transform(translateY(-50%));
+        top: 50%;
+
+        .icon-plus {
+            opacity: 1;
+        }
+
+        .icon-minus {
+            opacity: 1;
+        }
+    }
+}
+
+.filter-content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.catalog-category-view.page-layout-1column .column.main {
+    position: relative;
+}
+
