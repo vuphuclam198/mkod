@@ -7,6 +7,14 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="maxi-dresses" before="main.content" template="Magento_Catalog::maxi_dresses.phtml" /> 
+        </referenceContainer>
+
+        <referenceContainer name="page.top">
+            <referenceBlock name="breadcrumbs" remove="true"/>
+        </referenceContainer>
+
         <move element="catalog.leftnav" destination="category.products" />
     </body>
 </page>

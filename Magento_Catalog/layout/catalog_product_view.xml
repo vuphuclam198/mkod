@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="mage/gallery/gallery.css"/>
+    </head>
+    <update handle="catalog_product_opengraph" />
+    <update handle="page_calendar"/>
+    <body>
+
+    <referenceContainer name="main.content">
+        <container name="page.top.breadcrumbs.crossbar" htmlTag="div" htmlClass="breadcrumbs-crossbar" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" /> 
+        </container>
+    </referenceContainer>
+        <!-- <referenceBlock name="breadcrumbs">
+                <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" template="Magento_Catalog::crossbar_info.phtml" /> 
+        </referenceBlock> -->
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.media" htmlTag="div" htmlClass="product media" after="product.info.main">
+                <referenceContainer name="skip_gallery_before.wrapper" remove="true" />
+                <referenceContainer name="skip_gallery_after.wrapper" remove="true" />
+            </referenceContainer>
+
+            <referenceContainer name="product.info.main">
+                <referenceContainer name="product.info.price">
+                    <referenceBlock name="product.info.review" remove="true" />
+                    <referenceBlock name="product.price.final" before="product.info.type" />
+                    <container name="product.info.stock" after="-"/>
+                </referenceContainer>
+            </referenceContainer>
+        </referenceContainer>
+
+        <move element="breadcrumbs" destination="page.top.breadcrumbs.crossbar" before="-" />
+        <move element="page.main.title" destination="product.info.price" before="-" />
+        <move element="product.info.type" destination="product.info.stock" before="-" />
+        <move element="product.info" destination="product.info.price" after="-" />
+    </body>
+</page>
