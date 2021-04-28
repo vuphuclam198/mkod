@@ -163,14 +163,6 @@
 
             &.showcart {
                 white-space: nowrap;
-                &::before {
-                    font-family: "Font Awesome 5 Free";
-                    content: "\f095";
-                    display: inline-block;
-                    padding-right: 3px;
-                    vertical-align: middle;
-                    font-weight: 900;
-                }
 
                 .text {
                     &:extend(.abs-visually-hidden all);
@@ -410,7 +402,25 @@
         }
     }
 }
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .minicart-wrapper {
+        display: inline-block;
+        .action.showcart {
+            color: @color-0e0e0e;
+            &:before {
+                font-size: unset;
+                content: url(../image/bag_mobile.png);
+            }
+            &.active:before {
+                font-size: unset;
+                content: url(../image/bag_mobile.png);
+            }
+        }
 
+       
+    }
+    
+}
 //
 //  Desktop
 //  _____________________________________________
@@ -418,6 +428,26 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .minicart-wrapper {
         margin-left: 13px;
+        display: inline-block;
+        .action.showcart {
+            color: @color-0e0e0e;
+            &:before {
+                font-size: unset;
+                content: url(../image/bag.png);
+            }
+            &.active:before {
+                font-size: unset;
+                content: url(../image/bag.png);
+            }
+            .text {
+                line-height: 27px;
+                font-size: @font-size-14px;
+                letter-spacing: 1px;
+                color: @color-0e0e0e;;
+                font-family: @font-family__fugue;
+                position: unset;
+            }
+        }
 
         .block-minicart {
             right: -15px;
