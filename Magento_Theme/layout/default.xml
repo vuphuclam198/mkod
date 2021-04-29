@@ -14,7 +14,6 @@
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="report.bugs" remove="true"/>
-        <referenceBlock name="store.settings.currency" remove="true"/>
         
         
         <referenceContainer name="header-wrapper">
@@ -37,6 +36,7 @@
                 <block class="Magento\Framework\View\Element\Template" name="footer-bottom-left" template="Magento_Theme::footer_bottom/left.phtml" before="-"/>
                 <block class="Magento\Framework\View\Element\Template" name="footer-bottom-center" template="Magento_Theme::footer_bottom/center.phtml" before="footer-bottom-right"/>
                 <block class="Magento\Framework\View\Element\Template" name="footer-bottom-right" template="Magento_Theme::footer_bottom/right.phtml" after="-"/>
+                
             </container>
             <container name="footer.copyright" htmlClass="footer-copyright" htmlTag="div" after="-">
                 <block class="Magento\Framework\View\Element\Template" name="footer-copyright" template="Magento_Theme::footer_copyright.phtml" before="-"/>
