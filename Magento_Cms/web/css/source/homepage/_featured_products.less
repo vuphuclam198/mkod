@@ -1,8 +1,8 @@
 & when (@media-common = true) {
     .block-title {
-        color: #212121;
+        color: @color__title__product;
         font-weight: 400;
-        font-family: "Open Sans";
+        font-family: @font-family__base;
         text-align: center;
         text-transform: uppercase;
     }
@@ -12,14 +12,14 @@
         
         &__title {
             position: absolute;
-            color: #ffffff;
-            font-family: "Fugue";
+            color: @color-white;
+            font-family: @font-family__fugue;
             text-align: center;
         }
         &__link {
             position: absolute;
-            color: #ffffff;
-            font-family: "Fugue";
+            color: @color-white;
+            font-family: @font-family__fugue;
             text-align: center;
             text-decoration: underline;
             text-transform: uppercase;
@@ -88,6 +88,9 @@
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .featured-products {
+        padding-left: 10px;
+    }
     .block-title {
         font-size: 36px;
         line-height: 48px;
@@ -97,7 +100,7 @@
         strong {
             font-weight: 400; 
             line-height: 48px; 
-            font-size: 36px; 
+            font-size: @font-size-36px; 
         }
     }
     
@@ -111,7 +114,7 @@
             top: 57%;
             left: 50%;
             transform: translate(-50%);
-            font-size: 30px;
+            font-size: @font-size-30px;
             line-height: 24px;
         }
     }
@@ -122,18 +125,18 @@
         margin-bottom: unset;
     }
     .slick-next {
-        right: 25px;
+        right: 30px;
         
     }
     .slick-prev {
-        left: 25px ;
+        left: 15px ;
         
     }
     
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block-title {
-        font-size: 36px;
+        font-size: @font-size-36px;
         line-height: 48px;
         padding: 35px 0px 45px;
     }
@@ -141,7 +144,7 @@
         strong {
             font-weight: 400; 
             line-height: 48px; 
-            font-size: 36px; 
+            font-size: @font-size-36px; 
         }
     }
     .featured-items {
@@ -158,7 +161,7 @@
             top: 38.5%;
             left: 50%;
             transform: translate(-50%);
-            font-size: 48px;
+            font-size: @font-size-48px;
             line-height: 41px;
         }
         &__link {
@@ -166,13 +169,13 @@
             top: 70%;
             left: 50%;
             transform: translate(-50%);
-            font-size: 30px;
+            font-size: @font-size-30px;
             line-height: 24px;
         }
     }
     .widget .block-title > strong {
         line-height: 48px; 
-        font-size: 36px; 
+        font-size: @font-size-36px; 
         margin-top: unset;
         margin-bottom: unset;
     }
@@ -190,6 +193,13 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .featured-items {
         grid-gap: 60px;
+        .featured-item:nth-child(2){
+            &__title {
+                top: 44.5%;
+            }
+            
+        }
+        
     }
     .featured-item {
         &__link {
@@ -197,4 +207,5 @@
             left: 49.5%;
         }
     }
+    
 }
