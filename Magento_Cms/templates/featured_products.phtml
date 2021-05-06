@@ -2,7 +2,7 @@
     <div class="block-title">
         <strong>featured products</strong>
     </div>
-    <div class="items">
+    <div class="featured-items" id="featured-items">
         <?=
             $block->getLayout()
             ->createBlock('Magento\Cms\Block\Block')
@@ -11,3 +11,30 @@
         ?>
     </div>
 </div>
+<script>
+    require(['jquery', 'jquery/ui'], function($){ 
+        $( document ).ready(function() {
+            var $window = $(window);
+            var windowsize = $window.width();
+            if (windowsize < 768) {
+                require([
+                    'jquery',
+                    'slick',
+                    'domReady!'
+                ], function ($) {
+                    $(".featured-items").slick({
+                        dots: false,
+                        infinite: true,
+                        speed: 300,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        
+                    });
+                    
+                });
+            }
+        });
+    });
+   
+    
+</script>
