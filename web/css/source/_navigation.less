@@ -106,7 +106,7 @@
         position: fixed;
         top: 0;
         width: 80%;
-        width: calc(~'100% - @{active-nav-indent}');
+        width: 50%;
 
         .switcher {
             border-top: 1px solid @color-gray82;
@@ -261,10 +261,12 @@
         padding-top: 24px;
         text-align: center;
         width: 33.33%;
-
+        
         &.active {
-            background: transparent;
+            
             border-bottom: 0;
+            background: transparent;
+
         }
 
         .nav-sections-item-switch {
