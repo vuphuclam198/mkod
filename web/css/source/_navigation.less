@@ -31,7 +31,7 @@
                     color: @color-black;
                     font-weight: bold;
                     font-family: @font-family__gt;
-                    text-align: center;
+                    text-align: left;
                     padding: unset;
                 }
             }
@@ -67,6 +67,7 @@
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    
     .navigation {
         padding: 0;
 
@@ -105,9 +106,16 @@
         overflow: auto;
         position: fixed;
         top: 0;
-        width: 80%;
         width: 50%;
-
+        background: @color-white-smoke;
+        .navigation {
+            .level0 > {
+                .level-top {
+                    padding: 15px 10px;
+                }
+            }
+        }
+            
         .switcher {
             border-top: 1px solid @color-gray82;
             font-size: 1.6rem;
@@ -270,6 +278,7 @@
         }
 
         .nav-sections-item-switch {
+            color: @color-0d0d0d;
             &:hover {
                 text-decoration: none;
             }
