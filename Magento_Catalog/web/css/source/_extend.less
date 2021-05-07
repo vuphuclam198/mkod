@@ -34,6 +34,9 @@
 
 .products {
     margin-top: 0;
+    display: flex;
+    margin: 0 -5px;
+    width: 100%;
 }
 
 .product-item .tocart {
@@ -126,6 +129,7 @@
 
 .products-grid .product-item-actions {
     display: flex;
+    justify-content: center;
     margin-top: 3px;
     margin-bottom: 16px;
 }
@@ -301,6 +305,34 @@
     font-size: 16px;
     text-decoration: underline;
 }
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .page-products 
+    .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-layout-1column .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-layout-3columns 
+    .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-products.page-layout-1column 
+    .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-products.page-layout-3columns 
+    .products-grid 
+    .product-item:nth-child(3n + 1) {
+        margin: 0 10px;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .page-layout-1column .products-grid .product-item {
+        width: 100%;
+        margin: 0 10px;
+    }
+}
+
+.product-item-info {
+    width: 100%;
+}
 // gallery img
 .fotorama__nav-wrap.fotorama__nav-wrap--horizontal {
     margin-top: 20px;
@@ -370,4 +402,14 @@
     .modes-mode:before {
         font-size: 40px;
     }
+}
+
+
+/* the slides */
+.slick-slide {
+margin: 0 10px;
+}
+/* the parent */
+.slick-list {
+margin: 0 -10px;
 }
