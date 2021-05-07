@@ -193,8 +193,9 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .featured-items {
         grid-gap: 60px;
-        .featured-item:nth-child(2){
-            &__title {
+        .featured-item:nth-child(n+2){
+            
+            .featured-item__title {
                 top: 44.5%;
             }
             
