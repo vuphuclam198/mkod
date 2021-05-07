@@ -183,7 +183,6 @@
     }
     .page-footer {
         .lib-css(background-color, @footer__background-color);
-        margin-top: -96px;
     }
 
     .footer {
@@ -321,6 +320,9 @@
         margin-top: 2px;
 
     }
+    .page-footer {
+        margin-top: -20px;
+    }
 }
 
 //  Desktop
@@ -451,9 +453,13 @@
             &:extend(.abs-add-clearfix all);
         }
     }
+    .page-footer {
+        margin-top: -3px;
+    }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) { 
     .logo {
         margin-left: -2%;
     }
+    
 }
