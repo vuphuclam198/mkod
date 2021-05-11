@@ -14,7 +14,7 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-
+    
     .panel.header {
         .links,
         .switcher {
@@ -23,9 +23,22 @@
     }
 
     .nav-sections {
-        .lib-css(background, @navigation__background);
+        .navigation {
+            .level0 > {
+                .level-top {
+                    letter-spacing: 1px;
+                    line-height: 27px;
+                    color: @color-black;
+                    font-weight: bold;
+                    font-family: @font-family__gt;
+                    text-align: left;
+                    padding: unset;
+                }
+            }
+        }
+        
     }
-
+    
     .nav-toggle {
         .lib-icon-font(
         @icon-menu,
@@ -47,8 +60,14 @@
 //
 //  Mobile
 //  _____________________________________________
-
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .nav-toggle { 
+        padding: 0;
+        
+    }
+}
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    
     .navigation {
         padding: 0;
 
@@ -87,9 +106,16 @@
         overflow: auto;
         position: fixed;
         top: 0;
-        width: 80%;
-        width: calc(~'100% - @{active-nav-indent}');
-
+        width: 50%;
+        background: @color-white-smoke;
+        .navigation {
+            .level0 > {
+                .level-top {
+                    padding: 15px 10px;
+                }
+            }
+        }
+            
         .switcher {
             border-top: 1px solid @color-gray82;
             font-size: 1.6rem;
@@ -243,13 +269,16 @@
         padding-top: 24px;
         text-align: center;
         width: 33.33%;
-
+        
         &.active {
-            background: transparent;
+            
             border-bottom: 0;
+            background: transparent;
+
         }
 
         .nav-sections-item-switch {
+            color: @color-0d0d0d;
             &:hover {
                 text-decoration: none;
             }
@@ -272,6 +301,12 @@
     }
 
     .lib-main-navigation();
+    .nav-toggle { 
+        padding: 24px 12px;
+        &:before {
+            font-size: @font-size-36px;
+        }
+    }
 }
 
 //
@@ -279,6 +314,15 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .navigation {
+        li.level0 {
+            padding: 10px 6px;
+            margin: unset;
+        }
+        .level0 > .level-top {
+            font-size: @font-size-14px;
+        }
+    }
     .nav-toggle {
         display: none;
     }
@@ -286,7 +330,7 @@
     .nav-sections {
         .lib-vendor-prefix-flex-shrink(0);
         .lib-vendor-prefix-flex-basis(auto);
-        margin-bottom: @indent__m;
+        text-transform: capitalize;
     }
 
     .nav-sections-item-title {
@@ -304,6 +348,7 @@
     .nav-sections-item-content {
         > .navigation {
             display: block;
+            background: unset;
         }
     }
 
@@ -313,6 +358,54 @@
         .links,
         .switcher {
             display: inline-block;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .navigation {
+        li.level0 {
+            padding: 10px 15px;
+        }
+        .level0 > .level-top {
+            font-size: @font-size-16px;
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    
+    .nav-sections {
+        text-transform: uppercase;
+    }
+    .navigation li.level0 {
+        padding: unset;
+        margin: 0 10px 0 0;
+    }
+    .navigation ul li {
+        &:nth-child(1) {
+            padding-top: 6px;
+            padding-left: 45px;
+        }
+        &:nth-child(2) {
+            padding-left: 42px;
+        }
+        &:nth-child(3) {
+            padding-left: 45px;
+        }
+        &:nth-child(4) {
+            padding-left: 45px;
+        }
+        &:nth-child(5) {
+            padding-left: 42px;
+        }
+        &:nth-child(6) {
+            padding-left: 42px;
+        }
+        &:nth-child(7) {
+            padding-left: 42px;
+        }
+        &:nth-child(8) {
+            padding-left: 39px;
         }
     }
 }

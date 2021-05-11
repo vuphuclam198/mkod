@@ -33,7 +33,6 @@
     cursor: pointer;
     background: transparent;
     color: transparent;
-    top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
@@ -75,7 +74,6 @@
 }
 
 .slick-prev {
-    left: -25px;
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -89,7 +87,6 @@
 }
 
 .slick-next {
-    right: -25px;
     [dir="rtl"] & {
         left: -25px;
         right: auto;
@@ -164,5 +161,47 @@
             color: @slick-dot-color-active;
             opacity: @slick-opacity-default;
         }
+    }
+}
+.widget-product-grid {
+    .slick-prev,
+    .slick-next {
+        top: 32%;
+    }
+}
+.featured-items {
+    .slick-prev,
+    .slick-next {
+        top: 41%;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .widget-product-grid .slick-next {
+        right: -15px;
+        &:before {
+            content: url(../image/nextDesk.png);
+        }
+    }
+    .widget-product-grid .slick-prev {
+        left: -15px;
+        &:before {
+            content: url(../image/prevDesk.png);
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .widget-product-grid .slick-next {
+        right: -20px;
+    }
+    .widget-product-grid .slick-prev {
+        left: -20px;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .widget-product-grid .slick-next {
+        right: -87px;
+    }
+    .widget-product-grid .slick-prev {
+        left: -87px;
     }
 }

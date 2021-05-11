@@ -13,14 +13,19 @@
     <update handle="page_calendar"/>
     <body>
 
-    <referenceContainer name="main.content">
-        <container name="page.top.breadcrumbs.crossbar" htmlTag="div" htmlClass="breadcrumbs-crossbar" before="-">
-                <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" /> 
-        </container>
-    </referenceContainer>
-        <!-- <referenceBlock name="breadcrumbs">
-                <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" template="Magento_Catalog::crossbar_info.phtml" /> 
-        </referenceBlock> -->
+        <referenceContainer name="main.content">
+            <container name="page.top.breadcrumbs.crossbar" htmlTag="div" htmlClass="breadcrumbs-crossbar" before="-">
+                    <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" /> 
+            </container>
+
+            <!-- <block class="Magento\Framework\View\Element\Template" name="product.hihi.kk" template="Magento_Catalog::related.phtml" before="-" /> -->
+        </referenceContainer>
+            <!-- <referenceBlock name="breadcrumbs">
+                    <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" template="Magento_Catalog::crossbar_info.phtml" /> 
+            </referenceBlock> -->
+        
+        <referenceContainer name="product.info.social" remove="true" />
+
         <referenceContainer name="content">
             <referenceContainer name="product.info.media" htmlTag="div" htmlClass="product media" after="product.info.main">
                 <referenceContainer name="skip_gallery_before.wrapper" remove="true" />
@@ -33,6 +38,29 @@
                     <referenceBlock name="product.price.final" before="product.info.type" />
                     <container name="product.info.stock" after="-"/>
                 </referenceContainer>
+
+                <block class="Magento\Framework\View\Element\Template" name="product.info.social.link" template="Magento_Catalog::social_link.phtml" after="-" /> 
+                <referenceBlock name="product.info.details">
+                    <referenceBlock name="product.attributes" remove="true"/>
+                    <referenceBlock name="product.info.description">
+                        <arguments>
+                            <argument name="title" translate="true" xsi:type="string">Product info</argument>
+                        </arguments>
+                    </referenceBlock>
+                    <block class="Magento\Catalog\Block\Product\View" name="product.info.delivery" template="Magento_Catalog::delivery.phtml" group="detailed_info">
+                        <arguments>
+                            <argument name="title" translate="true" xsi:type="string"> DELIVERY</argument>
+                            <argument name="sort_order" xsi:type="string">11</argument>
+                        </arguments>
+                    </block>
+
+                    <block class="Magento\Catalog\Block\Product\View" name="product.info.return" template="Magento_Catalog::return.phtml" group="detailed_info">
+                        <arguments>
+                            <argument name="title" translate="true" xsi:type="string">Return</argument>
+                            <argument name="sort_order" xsi:type="string">12</argument>
+                        </arguments>
+                    </block>
+                </referenceBlock>
             </referenceContainer>
         </referenceContainer>
 
@@ -40,5 +68,8 @@
         <move element="page.main.title" destination="product.info.price" before="-" />
         <move element="product.info.type" destination="product.info.stock" before="-" />
         <move element="product.info" destination="product.info.price" after="-" />
+        <move element="product.info.details" destination="product.info.main" before="product.info.social.link" />
+        <move element="catalog.product.related" destination="main.content" after="-"/>
+        <move element="product.info.upsell" destination="main.content" after="-"/>
     </body>
 </page>

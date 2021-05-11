@@ -34,6 +34,9 @@
 
 .products {
     margin-top: 0;
+    display: flex;
+    margin: 0 -5px;
+    width: 100%;
 }
 
 .product-item .tocart {
@@ -126,6 +129,7 @@
 
 .products-grid .product-item-actions {
     display: flex;
+    justify-content: center;
     margin-top: 3px;
     margin-bottom: 16px;
 }
@@ -220,7 +224,7 @@
 }
 
 .breadcrumbs-crossbar {
-    padding: 89px 100px 0 0;
+    padding: 102px 100px 0 0;
     margin-bottom: 5px;
 
     &:before {
@@ -237,6 +241,7 @@
     .breadcrumbs {
         float: left;
         margin-bottom: 0;
+        padding-left: 0;
     }
 }
 
@@ -291,6 +296,81 @@
         clear: both;
     }
 }
+
+.btn_size_guide {
+    background: none;
+    border: none;
+    color: @color-gray56;
+    font-family: @font-family__fugue;
+    font-size: 16px;
+    text-decoration: underline;
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .page-products 
+    .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-layout-1column .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-layout-3columns 
+    .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-products.page-layout-1column 
+    .products-grid 
+    .product-item:nth-child(3n + 1), 
+    .page-products.page-layout-3columns 
+    .products-grid 
+    .product-item:nth-child(3n + 1) {
+        margin: 0 10px;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .page-layout-1column .products-grid .product-item {
+        width: 100%;
+        margin: 0 10px;
+    }
+}
+
+.product-item-info {
+    width: 100%;
+}
+// gallery img
+.fotorama__nav-wrap.fotorama__nav-wrap--horizontal {
+    margin-top: 20px;
+}
+
+.fotorama__nav__shaft {
+    margin: 0 -20px;
+}
+.fotorama__nav--thumbs .fotorama__nav__frame {
+    margin-left: 20px;
+}
+
+.fotorama__thumb-border {
+    border: none;
+}
+
+#product-addtocart-button {
+    width: 100%;
+}
+
+.socical-product-main {
+    .social__link {
+        color: @color-0d0d0d;
+
+        .fab {
+            font-size: 20px;
+        }
+
+        span {
+            font-weight: 700;
+            font-size: 14px;
+            font-family: @font-family__fugue;
+            font-size: 15px;
+            font-weight: 900;
+            padding-left: 2px;
+        }
+    }
+}
 /* end detail product */
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
@@ -322,4 +402,14 @@
     .modes-mode:before {
         font-size: 40px;
     }
+}
+
+
+/* the slides */
+.slick-slide {
+margin: 0 10px;
+}
+/* the parent */
+.slick-list {
+margin: 0 -10px;
 }
