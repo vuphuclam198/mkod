@@ -10,7 +10,8 @@
 <?php if ($block->displayProductStockStatus()) :?>
     <?php if ($_product->isAvailable()) :?>
         <div class="stock available" title="<?= $block->escapeHtmlAttr(__('Availability')) ?>">
-            <span><?= $block->escapeHtml(__('Item in stock')) ?></span>
+            <span class="item_in_stock"><?= $block->escapeHtml(__('Item in stock')) ?></span>
+            <span class="dispatched"><?= $block->escapeHtml(__('Usually dispatched within 2 working days')) ?></span>
         </div>
     <?php else :?>
         <div class="stock unavailable" title="<?= $block->escapeHtmlAttr(__('Availability')) ?>">
