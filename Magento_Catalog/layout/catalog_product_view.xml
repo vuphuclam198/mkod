@@ -70,5 +70,6 @@
         <move element="product.info" destination="product.info.price" after="-" />
         <move element="product.info.details" destination="product.info.main" before="product.info.social.link" />
         <move element="catalog.product.related" destination="main.content" after="-"/>
+        <move element="product.info.upsell" destination="main.content" after="-"/>
     </body>
 </page>
