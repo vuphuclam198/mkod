@@ -61,6 +61,13 @@
 //
 //  Desktop
 //  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .product.data.items {
+        .item.content {
+            padding: 24px 2px 53px 2px;
+        }
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .product.data.items {
@@ -81,7 +88,7 @@
             border: none;   
             float: none;
             margin-left: 0;
-            padding: 24px 2px 53px 2px;
+            padding: 10px 2px 30px 0px;
             line-height: 30px;
             margin-bottom: 0;
         } 

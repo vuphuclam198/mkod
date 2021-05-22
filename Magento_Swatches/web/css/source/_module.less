@@ -360,3 +360,11 @@
         visibility: hidden;
     }
 }
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .swatch-option.text {
+        font-size: 20px;
+        margin-right: 10px;
+        padding: 13px 12px;
+    }
+}

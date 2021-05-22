@@ -27,12 +27,12 @@
         <referenceContainer name="product.info.social" remove="true" />
 
         <referenceContainer name="content">
-            <referenceContainer name="product.info.media" htmlTag="div" htmlClass="product media" after="product.info.main">
+            <referenceContainer name="product.info.media" before="product.info.main">
                 <referenceContainer name="skip_gallery_before.wrapper" remove="true" />
                 <referenceContainer name="skip_gallery_after.wrapper" remove="true" />
             </referenceContainer>
 
-            <referenceContainer name="product.info.main">
+            <referenceContainer name="product.info.main" after="product.info.media">
                 <referenceContainer name="product.info.price">
                     <referenceBlock name="product.info.review" remove="true" />
                     <referenceBlock name="product.price.final" before="product.info.type" />
@@ -64,6 +64,7 @@
             </referenceContainer>
         </referenceContainer>
 
+        <move element="product.info.media" destination="content" before="-"/>
         <move element="breadcrumbs" destination="page.top.breadcrumbs.crossbar" before="-" />
         <move element="page.main.title" destination="product.info.price" before="-" />
         <move element="product.info.type" destination="product.info.stock" before="-" />
