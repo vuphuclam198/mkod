@@ -568,7 +568,6 @@
         .actions {
             .action.tocart {
                 &:extend(.abs-button-responsive-smaller all);
-                background: red;
             }
         }
     }
@@ -588,7 +587,7 @@
     }
 
     .product-info-main {
-        max-width: 500px;
+        max-width: 510px;
         margin: 0 auto;
         text-align: center;
         margin-top: 36px;
@@ -599,17 +598,24 @@
                 font-weight: 900;
                 font-size: 28px;
                 word-spacing: 1px;
-                margin-left: -14px;
+                margin-bottom: 0;
+                margin-left: -15px;
                 line-height: 28px;
             }
         }
     }
 
     .product-info-main .product.attribute.sku {
-        font-size: 13px;
+        font-size: 15px;
+        font-weight: 600;
         margin-bottom: 19px;
-        margin-left: -11px;
+        margin-left: 9px;
         letter-spacing: -.1px;
+        word-spacing: 1px;
+
+        .type {
+            margin-right: 0;
+        }
     }
 
     .product-info-main .price-box {
@@ -619,6 +625,47 @@
     .product-info-main .price-box .price-wrapper .price, .product-options-bottom .price-box .price-wrapper .price {
         font-size: 22px;
         font-weight: 600;
+    }
+
+    .product-info-main .stock.available, .product-info-main .stock.unavailable {
+        font-weight: 600;
+        font-size: 15px;    
+        letter-spacing: .1px;
+        margin-left: 24px;
+        margin-top: -2px;
+        margin-right: 0;
+    }
+
+    .product-info-main .box-tocart .action.tocart, .product-options-bottom .box-tocart .action.tocart {
+        font-size: 29px;
+        padding: 27px 0;
+
+        span {
+            margin-left: -18px;
+            font-weight: 700;
+        }
+    }
+
+    .product_info {
+        display: block;
+        .text {
+            border-bottom: 1px solid @color-0d0d0d;
+            font-weight: 400;
+            font-size: 22px;
+            padding: 0 20px 49px 20px;
+            margin: 63px 0 0 0px;
+            letter-spacing: 1px;
+
+        }
+    }
+
+    [aria-controls='description'] {
+        display: none;
+    }
+
+    .product.info.detailed {
+        padding-left: 14px;
+        margin-top: 0;
     }
 }
 
@@ -696,6 +743,10 @@
         display: flex;
         flex-direction: column;
         margin-top: -5px;
+    }
+
+    .product_info {
+        display: none;
     }
 }
 

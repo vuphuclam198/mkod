@@ -14,6 +14,7 @@
         <referenceContainer name="page.top">
             <referenceBlock name="breadcrumbs" remove="true"/>
         </referenceContainer>
+        <!-- <referenceBlock name="product_list_toolbar" remove="true"/> -->
         <referenceBlock name="page.main.title" remove="true"/>
         <move element="catalog.leftnav" destination="category.products" />
     </body>

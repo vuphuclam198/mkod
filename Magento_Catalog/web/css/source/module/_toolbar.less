@@ -44,6 +44,17 @@
         text-align: center;
         &:extend(.abs-add-clearfix all);
 
+        &:before {
+            content: '';
+            display: table;
+        }
+
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
         .pages {
             display: none;
 
@@ -109,11 +120,10 @@
 
     .modes {
         display: flex;
-        float: left;
         margin-top: -10px;
         margin-right: 20px;
         position: absolute;
-        left: 100%;
+        left: 102.5%;
         top: 0;
     }
 
@@ -232,3 +242,18 @@
         }
     }
 }
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .modes {
+        position: unset;
+    }
+
+    .sorter {
+        position: unset;
+    }
+
+    .toolbar-products {
+        float: right;
+    }
+}
+

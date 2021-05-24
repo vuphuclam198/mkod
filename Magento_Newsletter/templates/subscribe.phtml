@@ -38,3 +38,17 @@
         </form>
     </div>
 </div>
+
+<script>
+    require(['jquery', 'jquery/ui'], function($){ 
+        $( document ).ready(function() {
+            var $window = $(window);
+            var windowsize = $window.width();
+            var pathname = window.location.pathname;
+            if(pathname!='/m237/' && windowsize < 768)
+            {
+                $( ".newsletter" ).hide();
+            }
+        });
+    });
+</script>
