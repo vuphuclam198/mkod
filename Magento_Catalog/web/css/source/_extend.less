@@ -354,6 +354,7 @@
             font-weight: 400;
             font-size: 20px;
             margin-left: 0;
+            text-transform: uppercase;
 
             &:before {
                 font-size: 70px;
@@ -444,7 +445,6 @@
     }
 
     .crossbar_info .previous a, .crossbar_info .next a {
-        padding-right: 35px;
         padding-left: 0;
     }
 }
@@ -453,6 +453,11 @@
     .breadcrumbs-crossbar {
         padding-right: 100px;
     }
+
+    .crossbar_info .previous a, .crossbar_info .next a {
+        padding-right: 35px;
+    }
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xl) {
