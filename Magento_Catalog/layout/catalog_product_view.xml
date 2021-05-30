@@ -18,24 +18,20 @@
                     <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" /> 
             </container>
 
-            <!-- <block class="Magento\Framework\View\Element\Template" name="product.hihi.kk" template="Magento_Catalog::related.phtml" before="-" /> -->
         </referenceContainer>
-            <!-- <referenceBlock name="breadcrumbs">
-                    <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" template="Magento_Catalog::crossbar_info.phtml" /> 
-            </referenceBlock> -->
-        
+           
         <referenceContainer name="product.info.social" remove="true" />
 
         <referenceContainer name="content">
-            <referenceContainer name="product.info.media" before="product.info.main">
+            <referenceContainer name="product.info.media">
                 <referenceContainer name="skip_gallery_before.wrapper" remove="true" />
                 <referenceContainer name="skip_gallery_after.wrapper" remove="true" />
             </referenceContainer>
 
-            <referenceContainer name="product.info.main" after="product.info.media">
+            <referenceContainer name="product.info.main">
                 <referenceContainer name="product.info.price">
                     <referenceBlock name="product.info.review" remove="true" />
-                    <referenceBlock name="product.price.final" before="product.info.type" />
+                    <referenceBlock name="product.price.final"  />
                     <container name="product.info.stock" after="-"/>
                 </referenceContainer>
 

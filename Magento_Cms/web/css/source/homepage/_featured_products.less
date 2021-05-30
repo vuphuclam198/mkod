@@ -10,6 +10,7 @@
     .featured-item {
         position: relative;
         
+        
         &__title {
             position: absolute;
             color: @color-white;
@@ -23,6 +24,11 @@
             text-align: center;
             text-decoration: underline;
             text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                color: #ff87c5;
+                text-decoration: underline;
+            }
         }
     }
     .widget .block-title > strong {
@@ -62,13 +68,15 @@
             height: 100%;
         }
     }
-    .slick-next {
-        right: 0;
-        
-    }
-    .slick-prev {
-        left: -10px;
-        
+    .featured-items {
+        .slick-next {
+            right: 14px;
+            
+        }
+        .slick-prev {
+            left: -20px;
+            
+        }
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
@@ -78,13 +86,15 @@
             height: 100%;
         }
     }
-    .slick-next {
-        right: 0;
-        
-    }
-    .slick-prev {
-        left: -10px;
-        
+    .featured-items {
+        .slick-next {
+            right: 20px;
+            
+        }
+        .slick-prev {
+            left: -10px;
+            
+        }
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -124,14 +134,18 @@
         margin-top: unset;
         margin-bottom: unset;
     }
-    .slick-next {
-        right: 30px;
+    .featured-items {
+        .slick-next {
+            right: 50px;
+            
+        }
+        .slick-prev {
+            left: 15px ;
+            
+        }
         
     }
-    .slick-prev {
-        left: 15px ;
-        
-    }
+    
     
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
@@ -147,29 +161,26 @@
             font-size: @font-size-36px; 
         }
     }
-    // .featured-items {
-    //     display: grid;
-    //     grid-template-columns: 1fr 1fr 1fr;
-    //     grid-gap: 30px;
-    // }
+    
     .featured-item {
+        padding: 0 20px;
         img {
-            width: 100%;
-            // height: 100%;
+            // width: 100%;
+            height: 100%;
         }
         &__title {
             top: 38.5%;
             left: 50%;
             transform: translate(-50%);
-            font-size: @font-size-48px;
-            line-height: 41px;
+            font-size: 35px;
+            line-height: 35px;
         }
         &__link {
             width: 100%;
             top: 70%;
             left: 50%;
             transform: translate(-50%);
-            font-size: @font-size-30px;
+            font-size: 24px;
             line-height: 24px;
         }
     }
@@ -179,6 +190,22 @@
         margin-top: unset;
         margin-bottom: unset;
     }
+    .slick-track div:nth-child(3n+2) {
+        
+        .featured-item {
+            &__title {
+                top: 45.5%;
+            }
+        }
+    }
+    .slick-track div:nth-child(3n+3) {
+        
+        .featured-item {
+            &__title {
+                top: 45.5%;
+            }
+        }
+    }
     
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
@@ -186,26 +213,63 @@
     .featured-item {
         &__link {
             top: 60%;
-            left: 49.5%;
+            font-size: @font-size-30px;
+            line-height: 24px;
+        }
+        &__title {
+            top: 38.5%;
+            font-size: @font-size-48px;
+            line-height: 41px;
+        }
+    }
+    .slick-track div:nth-child(3n+2) {
+        
+        .featured-item {
+            &__title {
+                top: 42.5%;
+            }
+        }
+    }
+    .slick-track div:nth-child(3n+3) {
+        
+        .featured-item {
+            &__title {
+                top: 42.5%;
+            }
         }
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .featured-items {
-        grid-gap: 60px;
-        .featured-item:nth-child(n+2){
-            .featured-item__title {
-                top: 44.5%;
-            }
-            
-        }
+        padding-left: 10px;
         
     }
     .featured-item {
+        padding: 0;
         &__link {
             top: 57%;
             left: 49.5%;
         }
     }
-    
+    .slick-track div:nth-child(3n+1) {
+        
+        .featured-item {
+            padding-right: 40px;
+        }
+    }
+    .slick-track div:nth-child(3n+2) {
+        
+        .featured-item {
+            padding: 0 23px;
+            
+        }
+    }
+    .slick-track div:nth-child(3n+3) {
+        
+        .featured-item {
+            padding-left: 30px;
+            padding-right: 10px;
+            
+        }
+    }
 }

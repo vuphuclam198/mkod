@@ -166,6 +166,10 @@
 
                 .text {
                     &:extend(.abs-visually-hidden all);
+                    &:hover{
+                        color:#ff87c5;
+                    }
+                    
                 }
 
                 .counter.qty {
@@ -440,8 +444,8 @@
                 content: url(../image/bag.png);
             }
             .text {
-                line-height: 27px;
-                font-size: @font-size-14px;
+                line-height: 32px;
+                font-size: @font-size-11px;
                 letter-spacing: 1px;
                 color: @color-0e0e0e;;
                 font-family: @font-family__fugue;
@@ -452,6 +456,17 @@
         .block-minicart {
             right: -15px;
             width: 390px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .minicart-wrapper {
+        .action.showcart {
+            .text {
+                font-size: @font-size-14px;
+                line-height: 27px;
+            }
         }
     }
 }
