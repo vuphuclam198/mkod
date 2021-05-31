@@ -5,20 +5,25 @@
         color: @color-090909;
         font-family: @font-family__fugue;
         text-align: center;
+        &:hover {
+            color:#ff87c5;
+        }
     }
     .footer-content {
         
         a{
             color: @color-090909;
             font-weight: 300;
-            font-family: "Open Sans";
+            font-family: @font-family__base;
             
-            
+            &:hover {
+                color:#ff87c5;
+            }
             p {
                 // line-height: 21px;
                 color: @color-090909;
                 font-weight: 300;
-                font-family: "Open Sans";
+                font-family: @font-family__base;
             }
         }
     }
@@ -26,7 +31,11 @@
         line-height: 14px;
         color: @color-090909;
         font-weight: 300;
-        font-family: "Open Sans";
+        font-family: @font-family__base;
+        cursor: pointer;
+        &:hover {
+            color:#ff87c5;
+        }
     }
 }.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) { 
     // .footer-bottom {
@@ -106,6 +115,9 @@
         &__center {
             text-align: center;
             margin-top: 65px;
+            .footer-content {
+                top: 116%;
+            }
         }
         &__right {
             text-align: center;
@@ -130,7 +142,7 @@
         
     }
     .footer-copyright {
-       
+        top: 182%;
         font-size: @font-size-28px;
         width: 95%;
         position: absolute;
@@ -139,7 +151,7 @@
         bottom: 0;
         transform: translateX(-50%);
         letter-spacing: 0.9px;
-        
+        text-align: center;
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
@@ -178,9 +190,10 @@
     }
     .footer-copyright {
         font-size: @font-size-16px;
-        margin-top: -7.5%;
+        margin-top: -7%;
         max-width: 200px;
-        line-height: 27px;
+        line-height: 24px;
+        text-align: left;
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
@@ -212,6 +225,6 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     
     .footer-copyright {
-        margin-top: -2%;
+        margin-top: -1.8%;
     }
 }

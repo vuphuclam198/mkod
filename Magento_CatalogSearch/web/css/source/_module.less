@@ -198,6 +198,10 @@
             margin-bottom: 0;
         }
         .label {
+            &:before {
+                font-size: 35px;
+                line-height: 33px;
+            }
             &.active {
                 + .control {
                     input {
@@ -235,17 +239,18 @@
         }
         .label {
             &:before {
-                font-size: @font-size-45px;
-                line-height: 31px;
+                font-size: 52px;
+                line-height: 33px;
             }
             &.active {
                 + .control {
                     input {
                         position: absolute;
                         left: 50%;
-                        max-width: 50%;
+                        max-width: 100%;
                         top: -12%;
                         border: none;
+                        transition: all .5s;
                     }
                 }
             }

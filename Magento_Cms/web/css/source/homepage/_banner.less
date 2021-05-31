@@ -2,6 +2,7 @@
     .banner {
         position: relative;
         
+        
         img {
             width: 100%;
             height: 100%;
@@ -14,6 +15,9 @@
             text-transform: uppercase;
         }
         &__button {
+            &:hover {
+                color: #ff87c5;;
+            }
             & a{
                 position: absolute;
                 font-weight: 700;
@@ -91,7 +95,7 @@
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .banner {
-        padding-top: 13px;
+        
         img:nth-child(2) {
             display: none;
         }
@@ -136,7 +140,9 @@
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    
     .banner {
+        margin-top: -17px;
         &__title {
             font-size: @font-size-72px;
             line-height: 48px;

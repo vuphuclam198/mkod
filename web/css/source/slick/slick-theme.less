@@ -26,8 +26,8 @@
 .slick-next {
     position: absolute;
     display: block;
-    height: 20px;
-    width: 20px;
+    height: 0;
+    width: 0;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
@@ -55,7 +55,7 @@
 
 .slick-prev:before, .slick-next:before {
     font-family: @slick-font-family;
-    font-size: 20px;
+    // font-size: 20px;
     line-height: 1;
     color: @slick-arrow-color;
     opacity: @slick-opacity-default;
@@ -168,14 +168,46 @@
 .featured-items {
     .slick-prev,
     .slick-next {
-        top: 41%;
+        top: 39%;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .widget-product-grid {
+        .slick-next {
+            right: 20px;
+            
+        }
+        .slick-prev {
+            left: -10px;
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .widget-product-grid {
+        .slick-next {
+            right: 20px;
+            
+        }
+        .slick-prev {
+            left: -10px;
+            
+        }
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .widget-product-grid {
         .slick-prev,
         .slick-next {
-            top: 32%;
+            top: 33%;
+        }
+        .slick-next {
+            right: 59px;
+            
+        }
+        .slick-prev {
+            left: 25px;
+            
         }
     }
 }
@@ -186,16 +218,19 @@
             top: 32%;
         }
         .slick-next {
-            right: 0;
+            right: -3px;
             &:before {
                 content: url(../image/nextDesk.png);
             }
         }
         .slick-prev {
-            left: 0;
+            left: -3.5%;
             &:before {
                 content: url(../image/prevDesk.png);
             }
+        }
+        .slick-list {
+            margin-left: -15px;
         }
     }
     
@@ -203,14 +238,15 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .widget-product-grid {
         .slick-next {
-            right: 0;
+            right: -3px;
         }
         .slick-prev {
-            left: 0;
+            left: -2.5%;
         }
     }
     
 }
+
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .widget-product-grid {
         .slick-prev,
@@ -218,7 +254,7 @@
             top: 33%;
         }
         .slick-next {
-            right: -6.5%;
+            right: -5.5%;
         }
         .slick-prev {
             left: -7%;

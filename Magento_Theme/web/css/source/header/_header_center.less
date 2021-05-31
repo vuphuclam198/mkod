@@ -1,18 +1,6 @@
 & when (@media-common = true) {
     //center
 
-    //search
-    // .block-search {
-    //     .footer.contentinput {
-    //         padding: unset;
-    //         border: unset;
-    //     }
-    //     .action.search {
-    //         right: 100px;
-    //     }
-    // }
-    
-
     //ri.footer.contentght
     .header-center-right {
         font-size: @font-size-14px;
@@ -21,13 +9,20 @@
         font-family: @font-family__fugue;
         display: inline-block;
         float: right;
-        a&__phone,a&__phone:hover {
+       
+        a&__phone {
             color: @color-0e0e0e;
             text-decoration: none;
+            &:hover {
+                color:#ff87c5;
+            }
         }
-        a&__account,a&__account:hover {
+        a&__account {
             color: @color-0e0e0e;
             text-decoration: none;
+            &:hover {
+                color:#ff87c5;
+            }
         }
     }
     .icon-header {
@@ -92,43 +87,6 @@
     
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    // .header.content {
-    //     &::before {
-    //         content: none;
-    //     }
-    //     &::after {
-    //         content: none;
-    //     }
-    // }
-    // .nav-toggle { 
-    //     padding: 24px 12px;
-    //     &:before {
-    //         font-size: @font-size-36px;
-    //     }
-    // }
-    // .page-header {
-    //     border-bottom: unset;
-    // }
-    //search
-    // .block-search {
-    //     margin-top: 6.5%;
-    //     margin-left: 5%;
-    //     display: inline-block;
-    //     .control {
-    //         border-top: unset;
-    //     }
-    //     .label:before {
-    //         font-size: @font-size-45px;
-    //         line-height: 31px;
-    //     }
-    // }
-    
-    //logo
-    // .logo {
-    //     margin: unset;
-    //     margin-left: 22.8%;
-    //     margin-top: 2px;
-    // }
 
     //right 
     .header-center-right {
@@ -141,59 +99,13 @@
             display: none;
         }
     }
-    // .minicart-wrapper {
-    //     display: inline-block;
-    //     .action.showcart {
-    //         color: @color-0e0e0e;
-    //         &:before {
-    //             font-size: unset;
-    //             content: url(../image/bag_mobile.png);
-    //         }
-    //         &.active:before {
-    //             font-size: unset;
-    //             content: url(../image/bag_mobile.png);
-    //         }
-    //     }
-    // }
+  
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    // .header.content {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     padding: 10px 20px 0;
-    // }
-    //search
-    // .block-search {
-    //     padding-left: unset;
-    //     float: left;
-    //     margin-top: 36px;
-    //     input {
-    //         padding: unset;
-    //         border: unset;
-    //     }
-    //     .action.search {
-    //         right: 100px;
-    //     }
-    // }
-    // .header.content {
-    //     padding: 10px 20px 0;
-    //     &::before {
-    //         content: none;
-    //     }
-    //     &::after {
-    //         content: none;
-    //     }
-    // }
-    // //logo
-    // .logo {
-    //     margin: unset;
-    //     margin-left: -17%;
-    //     // margin-top: -5px;
-    // }
 
     //right 
     .header-center-right {
-
+        font-size: @font-size-11px;
         padding-top: 45px;
         &__phone {
             display: inline-block;
@@ -202,54 +114,21 @@
             display: inline-block;
         }
     }
-    // .fieldset > .field.no-label > .label, .fieldset > .fields > .field.no-label > .label, .product-item-actions .actions-secondary > .action span, .table-comparison .cell.label.remove span, .table-comparison .cell.label.product span, .cart.table-wrapper .col.qty .label, .minicart-wrapper .action.showcart .text, .minicart-wrapper .action.showcart .counter-label, .checkout-index-index .page-title-wrapper, .checkout-payment-method .field-select-billing > .label, .checkout-payment-method .payments .legend, .checkout-payment-method .ccard .legend, .fieldset .fullname.field > .label, .account .column.main .limiter > .label, .field.street .field .label, .account-nav .title, .page-product-downloadable .product-options-wrapper .fieldset .legend.links-title, .page-product-giftcard .fieldset.giftcard > .legend, .opc-wrapper .form-giftcard-account .field .label, .filter-options-content .filter-count-label, .block-wishlist-search-form .form-wishlist-search .fieldset > .legend, .page-multiple-wishlist .page-title-wrapper .page-title, .multicheckout .table-wrapper .col .label, .multicheckout .block .methods-shipping .item-content .fieldset > .legend, .block.newsletter .label, .block-reorder .product-item .label, .opc-wrapper .form-discount .field .label, .action.skip:not(:focus), .page-header .switcher .label, .page-footer .switcher .label, .products-grid.wishlist .product-item .comment-box .label {
-    //     position: unset;
-    // }
-    // .minicart-wrapper {
-    //     display: inline-block;
-    //     .action.showcart {
-    //         color: @color-0e0e0e;
-    //         &:before {
-    //             font-size: unset;
-    //             content: url(../image/bag.png);
-    //         }
-    //         &.active:before {
-    //             font-size: unset;
-    //             content: url(../image/bag.png);
-    //         }
-    //     }
-    // }
+    
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     //search
-    // .block-search {
-    //     margin-top: 6px;
-    // }
-    // //logo
-    // .logo {
-    //     margin: unset;
-        
-    // }
+   
 
     //right 
     .header-center-right {
+        font-size: @font-size-14px;
         padding-top: 14px;
         margin-top: 36px;
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-    // //search
-    // .block-search {
-    //     margin-top: 7px;
-    //     margin-left: 1.5%;
-    // }
-    // //logo
-    // .logo {
-    //     margin: unset;
-    //     margin-left: -2%;
-    //     margin-top: -4px;
-    // }
-
+   
     //right 
     .header-center-right {
         padding-top: 14px;

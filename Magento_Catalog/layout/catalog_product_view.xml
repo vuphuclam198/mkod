@@ -18,8 +18,8 @@
                     <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" /> 
             </container>
 
-            <!-- <block class="Magento\Framework\View\Element\Template" name="product.hihi.kk" template="Magento_Catalog::related.phtml" before="-" /> -->
         </referenceContainer>
+           
             <!-- <referenceBlock name="breadcrumbs">
                     <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" template="Magento_Catalog::crossbar_info.phtml" /> 
             </referenceBlock> -->
