@@ -15,12 +15,14 @@
 <?php if ($block->canShowBlock()) : ?>
     <div class="block filter block_filter" >
         <button type="button" class="btn btn_filter">
-            <?= $block->escapeHtml(__('filters')) ?>
-            
-            <div class="icon">
-                <i class="icon-plus fas fa-plus"></i>
-                <i class="icon-minus fas fa-minus"></i>
-            </div>
+            <span>
+                <?= $block->escapeHtml(__('Filters')) ?>
+                
+                <div class="icon">
+                    <i class="icon-plus fas fa-plus"></i>
+                    <i class="icon-minus fas fa-minus"></i>
+                </div>
+            </span>
         </button>
         <div class="block-content filter-content">
             <div class="block-title filter-title">
@@ -58,6 +60,7 @@
             $(".btn_filter").click(function(){
                 $(".filter-content").toggleClass("active");
                 $(".btn_filter").toggleClass("active");
+                $(".sort_content").removeClass("active");
             });
         });
     });

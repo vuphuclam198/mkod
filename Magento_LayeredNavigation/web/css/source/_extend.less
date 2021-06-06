@@ -4,6 +4,7 @@
     color: @color-0d0d0d;
     font-family: @font-family__fugue;
     .lib-font-size(12);
+    padding: 0 10px;
     position: relative;
 
     &:hover, &:active , &.active {
@@ -11,7 +12,7 @@
         border: none;
         box-shadow: none;
         color: unset;
-        padding-left: 0;
+        // padding-left: 0;
     }
 
     &.active {
@@ -46,6 +47,10 @@
             .transform(translateY(-50%));
         }
     }
+
+    span {
+        text-transform: lowercase;
+    }
 }
 
 .filter-content {
@@ -53,14 +58,17 @@
     clip: rect(0,0,0,0);
 
     &.active {
+        background: @background-white;
         clip: auto;
-        transition: all 2s linear;
-        width: 150px;
+        transition: all .5s linear;
+        width: 250px;
+        z-index: 1000;
     }
 }
 
 .catalog-category-view.page-layout-1column .column.main {
     position: relative;
+    padding-bottom: 0;
 }
 
 .filter-options .filter-options-content {
@@ -85,4 +93,30 @@ button:focus, button:active,
 .action-gift:active {
     background: none;
     border: none;
+}
+
+@media only screen and (max-width:@screen__m){
+    .btn_filter, .btn_sorter {
+        font-size: 20px;
+        font-weight: 400;
+
+        span {
+            text-transform: inherit;
+        }
+
+        .icon {
+            display: none;
+        }
+    }
+
+    .btn_sorter {
+        span {
+            display: none;
+        }
+    }
+    .btn_sorter {
+        &:after {
+            content: 'Sort By';
+        }
+    }
 }

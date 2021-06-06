@@ -82,19 +82,23 @@
         .sorter-action {
             position: relative;
             top: -2px;
+            display: none;
         }
     }
 
     .sort_content {
-        display: none;
-    
+        clip: rect(0,0,0,0);
+        position: absolute;
+        right: 0;
+        
         &.active {
-            display: block;
+            clip: auto;
+            z-index: 1000;
         }
     }
 
     .sorter-options {
-        margin: 0 0 0 7px;
+        margin: 0;
         width: auto;
     }
 
@@ -153,6 +157,22 @@
             display: none;
         }
     }
+
+    .modes-mode:before {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 24px;
+        line-height: inherit;
+        color: #7d7d7d;
+        content: '\e60d';
+        font-family: 'icons-blank-theme';
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+    }
 }
 
 //
@@ -178,14 +198,8 @@
         float: left;
     }
 
-    .sorter {
-        float: right;
-        right: 101%;
-        top: 0;
-    }
-
     .modes {
-        float: left;
+        // float: left;
         margin-right: @indent__base;
 
         .products.wrapper ~ .toolbar & {
@@ -245,15 +259,76 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .modes {
+        float: left;
+        margin-right: 11px;
+        margin-top: -12px;
         position: unset;
+
+        &-mode {
+            span {
+                border: 0;
+                clip: rect(0, 0, 0, 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            &:last-child {
+                margin-left: 10px;
+            }
+
+            &::before {
+                font-size: 45px;
+                line-height: 45px;
+            }
+        }
     }
 
     .sorter {
-        position: unset;
+        position: relative;
+        float: right;
     }
 
     .toolbar-products {
         float: right;
     }
-}
 
+    .modes-label {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .products.wrapper ~ .toolbar .modes {
+        display: none;
+    }
+}
+@media only screen and (min-width: @screen__xl) {
+    .sorter {
+        float: right;
+        right: 101%;
+        top: 0;
+    }
+}
+@media only screen and (max-width: @screen__xl) {
+    .modes {
+        float: right;
+        position: unset;
+        margin-left: 50px;
+    }
+
+    .sorter {
+        float: left;
+        position: relative;
+        right: unset;
+        right: unset;
+    }
+}
